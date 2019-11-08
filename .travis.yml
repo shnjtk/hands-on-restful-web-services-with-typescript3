@@ -6,4 +6,4 @@ services:
     - docker
     - mongodb
 script:
-    - npm run test
+    - cd order-api && npm run test
