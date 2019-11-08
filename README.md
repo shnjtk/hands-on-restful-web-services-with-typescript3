@@ -1,5 +1,7 @@
 # Hands-On RESTful Web Services with TypeScript 3
 
+[![Build Status](https://travis-ci.org/shnjtk/hands-on-restful-web-services-with-typescript3.svg?branch=master)](https://travis-ci.org/shnjtk/hands-on-restful-web-services-with-typescript3)
+
 - [x] 1. Introduction to RESTful API Development
 - [x] 2. Principles of Designing RESTful APIs
 - [x] 3. Designing RESTful APIs with OpenAPI and Swagger
