@@ -56,6 +56,7 @@ describe('userRoute', () => {
       });
   });
   it('should create a new user and retrieve it back', async () => {
+    user.email = 'unique_email@email.com';
     return chai
       .request(app)
       .post('/users/')
