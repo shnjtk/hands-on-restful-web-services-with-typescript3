@@ -12,6 +12,6 @@
 - [x] 8. Working with Databases and ODMs
 - [x] 9. Securing Your API
 - [x] 10. Error Handling and Logging
-- [ ] 11. Creating a CI/CD Pipeline for Your API
+- [x] 11. Creating a CI/CD Pipeline for Your API
 - [ ] 12. Developing RESTful APIs with Microservices
 - [ ] 13. Flexible APIs with GraphQL
