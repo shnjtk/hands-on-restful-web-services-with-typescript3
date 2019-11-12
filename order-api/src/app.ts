@@ -1,4 +1,5 @@
 import * as bodyParser from 'body-parser';
+import * as dotenv from 'dotenv';
 import * as express from 'express';
 import * as expressWinston from 'express-winston';
 import * as mongoose from 'mongoose';
@@ -13,9 +14,16 @@ class App {
   public userRoutes: UserRoute = new UserRoute();
   public apiRoutes: APIRoute = new APIRoute();
   public orderRoutes: OrderRoute = new OrderRoute();
-  public mongoUrl: string = 'mongodb://localhost/order-api';
+  public mongoUrl: string;
+  public mongoUser: string;
+  public mongoPass: string;
 
   constructor() {
+    const path = `${__dirname}/../.env.${process.env.NODE_ENV}`;
+    dotenv.config({ path: path });
+    this.mongoUrl = `mongodb://${process.env.MONGODB_URL_PORT}/${process.env.MONGODB_DATABASE}`;
+    this.mongoUser = `${process.env.MONGODB_USER}`;
+    this.mongoPass = `${process.env.MONGODB_PASS}`;
     this.app = express();
     this.app.use(bodyParser.json());
     this.userRoutes.routes(this.app);
