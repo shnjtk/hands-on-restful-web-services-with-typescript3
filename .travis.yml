@@ -6,7 +6,7 @@ services:
     - docker
     - mongodb
 script:
-    - cd order-api && npm install && npm run test
+    - npm install && npm run test
 deploy:
     provider: gae
     project: order-api-258800
