@@ -2,3 +2,5 @@
 *dist/
 **/*.pem
 **/*.log
+**/*/.env.prod
+**/*/gce.json

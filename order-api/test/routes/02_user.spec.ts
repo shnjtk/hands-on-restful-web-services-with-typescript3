@@ -27,6 +27,8 @@ let token;
 describe('userRoute', () => {
   before(done => {
     expect(UserModel.modelName).to.be.equal('User');
+    console.log(UserModel.db);
+    console.log(UserModel.db.db);
     UserModel.db.db.dropCollection('users', async (err, result) => {
       const newUser = new UserModel(user);
       newUser.password = bcrypt.hashSync(newUser.password, 10);
@@ -37,7 +39,7 @@ describe('userRoute', () => {
     });
   });
 
-  it('should be able to login', () => {
+  it('should be able to login', async () => {
     return chai
       .request(app)
       .get(`/users/login?username=${user.username}&password=${user.password}`)

@@ -41,7 +41,15 @@ class App {
   }
 
   private mongoSetup(): void {
-    mongoose.connect(this.mongoUrl, { useNewUrlParser: true });
+    mongoose.connect(this.mongoUrl, {
+      useNewUrlParser: true,
+      useCreateIndex: true,
+    });
+    const db = mongoose.connection;
+    db.on('error', console.log.bind(console, 'DB connection error'));
+    db.once('open', () => {
+      console.log('Connecting DB...');
+    });
   }
 }
 

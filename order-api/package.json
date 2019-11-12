@@ -14,6 +14,8 @@
     "stryker:init": "stryker init",
     "dev": "cross-env PORT=3000 NODE_ENV=development ts-node ./src/server.ts",
     "prod": "PORT=3000 npm run build && npm run start",
+    "start": "NODE_ENV=prod node dist/server.js",
+    "prestart": "node dist/utilities/config.js",
     "tsc": "tsc"
   },
   "engines": {
@@ -23,6 +25,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@google-cloud/storage": "^4.1.1",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
     "chai-http": "^4.3.0",

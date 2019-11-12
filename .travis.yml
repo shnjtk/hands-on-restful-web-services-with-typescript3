@@ -1,9 +1,19 @@
 language: node_js
 node_js:
-    - 10
+- 10
 sudo: required
 services:
-    - docker
-    - mongodb
+- docker
+- mongodb
 script:
-    - cd order-api && npm install && npm run test
+- cd order-api && npm install && npm run test
+deploy:
+  provider: gae
+  project: order-api-258800
+  keyfile: gce.json
+  skip_cleanup: true
+  verbosity: debug
+  on: master
+before_install:
+- openssl aes-256-cbc -K $encrypted_13b170b431c3_key -iv $encrypted_13b170b431c3_iv
+  -in gce.json.enc -out gce.json -d
